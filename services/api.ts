@@ -1,6 +1,6 @@
 import { ChatRequestPayload, ChatResponsePayload } from '../types/chat';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace(/\/$/, '');
 
 export async function sendMessageToBackend(message: string): Promise<string> {
   const payload: ChatRequestPayload = { message };
