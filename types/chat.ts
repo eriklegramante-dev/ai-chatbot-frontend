@@ -6,6 +6,7 @@ export interface Message {
 }
 
 export interface ChatRequestPayload {
+  session_id: string; 
   message: string;
 }
 

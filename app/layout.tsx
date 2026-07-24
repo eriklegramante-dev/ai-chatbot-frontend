@@ -1,10 +1,5 @@
-import type { Metadata } from 'next';
 import './globals.css';
-
-export const metadata: Metadata = {
-  title: 'AI Chatbot',
-  description: 'Frontend client for the AI Chatbot application',
-};
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 export default function RootLayout({
   children,
@@ -12,9 +7,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        {children}
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

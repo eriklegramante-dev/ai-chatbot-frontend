@@ -1,11 +1,15 @@
-import { ChatRequestPayload, ChatResponsePayload } from '../types/chat';
+import { ChatRequestPayload, ChatResponsePayload } from '@/types/chat';
 
-const API_BASE_URL = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000').replace(/\/$/, '');
+export async function sendMessageToBackend(
+  message: string,
+  sessionId: string
+): Promise<string> {
+  const payload: ChatRequestPayload = {
+    session_id: sessionId,
+    message,
+  };
 
-export async function sendMessageToBackend(message: string): Promise<string> {
-  const payload: ChatRequestPayload = { message };
-
-  const response = await fetch(`${API_BASE_URL}/api/chat`, {
+  const response = await fetch('http://localhost:8000/api/chat', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -14,8 +18,7 @@ export async function sendMessageToBackend(message: string): Promise<string> {
   });
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({}));
-    throw new Error(errorData.message || `HTTP error! Status: ${response.status}`);
+    throw new Error(`Server error: ${response.statusText}`);
   }
 
   const data: ChatResponsePayload = await response.json();
