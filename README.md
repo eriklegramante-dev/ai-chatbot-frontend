@@ -17,9 +17,12 @@ O **SYNTH_MATH // 1984 Client Terminal** é a camada de apresentação do sistem
 ## 🖼️ Screenshots
 
 ```md
+
+<div align="center">
 <img width="1600" height="825" alt="Image" src="https://github.com/user-attachments/assets/802e0134-9c37-4768-bff5-34e4c0ac7605" />
 
 <img width="1600" height="825" alt="Image" src="https://github.com/user-attachments/assets/3b09c24b-0dad-4aa2-ba23-f7bf0f62ed72" />
+</div>
 ```
 ---
 
