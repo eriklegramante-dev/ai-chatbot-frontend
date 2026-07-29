@@ -16,13 +16,10 @@ O **SYNTH_MATH // 1984 Client Terminal** é a camada de apresentação do sistem
 
 ## 🖼️ Screenshots
 
-> Adicione suas imagens abaixo.
-
 ```md
 ![Home&Chat](./assets/front1.jpeg)
 ![Home&Chat](./assets/front2.jpeg)
 ```
-.
 ---
 
 ## ✨ Features
