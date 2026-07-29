@@ -1,165 +1,154 @@
-# 🤖 SYNTH_MATH // 1984
 
-> Plataforma Full Stack de IA com arquitetura modular, agentes inteligentes e infraestrutura conteinerizada.
+# 🌆 SYNTH_MATH // 1984 — Client Terminal
 
-## 🚀 Visão Geral
+> Interface **React + Next.js** para um ecossistema de IA Multi-Agentes inspirado na estética **Synthwave / Retrowave / 1984**.
 
-**SYNTH_MATH // 1984** foi desenvolvido como um desafio técnico para validar competências Full Stack e DevOps. O projeto demonstra arquitetura limpa, integração entre Front-end e Back-end, agentes de IA especializados e ambiente totalmente conteinerizado.
+![React](https://img.shields.io/badge/React-20232A?logo=react)
+![Next.js](https://img.shields.io/badge/Next.js-000?logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwindcss)
 
-## ✨ Tecnologias
+---
 
-### Back-end
-- Python
-- FastAPI
-- Pydantic
+## 👁️ Visão Geral
 
-### IA
-- CrewAI
-- Groq (Llama 3)
-- Gemini
-- LiteLLM
+O **SYNTH_MATH // 1984 Client Terminal** é a camada de apresentação do sistema de IA Multi-Agentes. A interface foi projetada para oferecer uma experiência imersiva inspirada em terminais CRT dos anos 80, combinando UX moderna com um visual hacker retro-futurista.
 
-### Front-end
+## 🖼️ Screenshots
+
+> Adicione suas imagens abaixo.
+
+```md
+![Home](docs/images/home.png)
+![Chat](docs/images/chat.png)
+![Sessions](docs/images/sidebar.png)
+```
+
+---
+
+## ✨ Features
+
+- 💬 Chat em tempo real
+- 🧠 Contexto persistido via `localStorage`
+- 📚 Histórico de sessões
+- ➕ Novo chat
+- 🗑️ Exclusão de conversas
+- ⚡ Loading "Processing Calculation..."
+- 🌈 Tema Synthwave (Pink/Cyan)
+- 📱 Layout responsivo
+- 🔌 Integração transparente com FastAPI
+- 🐳 Pronto para Docker
+
+## 🧱 Stack
+
 - React
-- Next.js
-- Tema Synthwave / 1984
+- Next.js (`use client`)
+- TypeScript
+- Tailwind CSS
+- Fetch API
+- localStorage
 
-### Infraestrutura
-- Docker
-- Docker Compose
-- Redes Docker
-- CORS configurado
-
-### Testes
-- Pytest
-- Swagger/OpenAPI
-- Testes de agentes
-- Testes de memória
-- Testes de orquestração
-- Testes de validação
-
-## 🏗 Arquitetura
+## 🏗️ Arquitetura
 
 ```text
-React/Next.js
-      │
-      ▼
- FastAPI REST API
-      │
-      ▼
- Orchestrator
- ├── Senior Mathematician
- └── Retro Writer
-      │
-      ▼
- Memory Manager
-      │
-      ▼
- LiteLLM
- ├── Groq
- └── Gemini
+UI
+ │
+ ▼
+Session Manager
+ │
+ ▼
+History Formatter
+ │
+ ▼
+Fetch API
+ │
+ ▼
+FastAPI Backend
+ │
+ ▼
+CrewAI + LLMs
 ```
 
-## 📂 Estrutura
-
-```text
-CHAT-BOT-TASK/
-├── logs/
-│   └── app.log
-├── src/
-│   ├── agents/
-│   │   ├── mathematician.py
-│   │   └── writer.py
-│   ├── config/
-│   │   ├── llm.py
-│   │   └── logger_config.py
-│   ├── memory/
-│   │   └── memory_manager.py
-│   ├── orchestrators/
-│   │   └── orchestrator.py
-│   ├── schemas/
-│   │   └── schemas.py
-│   ├── tools/
-│   │   └── tools.py
-│   └── utils/
-│       └── validation.py
-├── tests/
-├── docker-compose.yml
-├── dockerfile
-├── main.py
-├── pytest.ini
-├── requirements.txt
-└── .env.example
-```
-
-## 🤖 Agentes
-
-### Senior Mathematician
-- Resolve cálculos complexos
-- Mantém contexto do histórico
-- Explica o raciocínio
-
-### Copywriter Multilíngue Retro-Futurista
-- Produção de textos
-- Múltiplos idiomas
-- Estilo Synthwave/1984
-
-## ⚙️ Instalação
+## 🚀 Instalação
 
 ```bash
 git clone <repo>
 
-cp .env.example .env
+cd frontend
 
-docker compose up --build
+npm install
+
+npm run dev
 ```
 
 ou
 
 ```bash
-pip install -r requirements.txt
+yarn
 
-uvicorn main:app --reload
+yarn dev
 ```
+
+## 🔐 Variáveis de Ambiente
+
+`.env.local`
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+## 🎨 Design System
+
+- Neon Pink + Cyan
+- Tipografia monoespaçada
+- Glassmorphism
+- Backdrop Blur
+- Scanlines CRT
+- Grid futurista
+- Glow Effects
+- Micro animações
+
+## 📂 Organização
+
+```text
+src/
+ ├── components/
+ ├── hooks/
+ ├── types/
+ ├── utils/
+ ├── app/
+ └── styles/
+```
+
+## 🔄 Fluxo
+
+1. Usuário envia prompt.
+2. Histórico é formatado (`USER`/`ASSISTANT`).
+3. Requisição assíncrona via Fetch.
+4. FastAPI processa.
+5. CrewAI consulta agentes.
+6. Resposta renderizada.
+7. Sessão salva no navegador.
 
 ## 🧪 Testes
 
-```bash
-pytest
-pytest -v
-pytest --cov
-```
+- Testes manuais
+- Integração com Swagger
+- Validação de erros CORS
+- Testes de UX e responsividade
 
-Também foram realizados testes funcionais através do Swagger.
+## 🔮 Roadmap
 
-## 📡 Documentação
+- Streaming de respostas
+- Markdown
+- Temas
+- Exportação de conversas
+- Autenticação
+- WebSockets
 
-Após iniciar:
+## 🤝 Integração
 
-```
-http://localhost:8000/docs
-```
-
-## 🎯 Diferenciais
-
-- Arquitetura refatorada
-- Separação por responsabilidades
-- Validação rigorosa
-- Docker Ready
-- Escalável
-- Fácil integração Front-end/Back-end
-- Logging centralizado
-- Memória conversacional
-- Múltiplas LLMs
-
-## 🔮 Próximos passos:
-
-- Streaming
-- Redis
-- Banco vetorial
-- Observabilidade
-- CI/CD
-- Deploy Kubernetes
+Projetado para integração desacoplada com o Back-end via Docker Compose, permitindo evolução independente dos repositórios mantendo comunicação consistente.
 
 ## 📄 Licença
 
