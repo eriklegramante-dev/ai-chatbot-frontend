@@ -1,36 +1,166 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 SYNTH_MATH // 1984
 
-## Getting Started
+> Plataforma Full Stack de IA com arquitetura modular, agentes inteligentes e infraestrutura conteinerizada.
 
-First, run the development server:
+## 🚀 Visão Geral
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**SYNTH_MATH // 1984** foi desenvolvido como um desafio técnico para validar competências Full Stack e DevOps. O projeto demonstra arquitetura limpa, integração entre Front-end e Back-end, agentes de IA especializados e ambiente totalmente conteinerizado.
+
+## ✨ Tecnologias
+
+### Back-end
+- Python
+- FastAPI
+- Pydantic
+
+### IA
+- CrewAI
+- Groq (Llama 3)
+- Gemini
+- LiteLLM
+
+### Front-end
+- React
+- Next.js
+- Tema Synthwave / 1984
+
+### Infraestrutura
+- Docker
+- Docker Compose
+- Redes Docker
+- CORS configurado
+
+### Testes
+- Pytest
+- Swagger/OpenAPI
+- Testes de agentes
+- Testes de memória
+- Testes de orquestração
+- Testes de validação
+
+## 🏗 Arquitetura
+
+```text
+React/Next.js
+      │
+      ▼
+ FastAPI REST API
+      │
+      ▼
+ Orchestrator
+ ├── Senior Mathematician
+ └── Retro Writer
+      │
+      ▼
+ Memory Manager
+      │
+      ▼
+ LiteLLM
+ ├── Groq
+ └── Gemini
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📂 Estrutura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+CHAT-BOT-TASK/
+├── logs/
+│   └── app.log
+├── src/
+│   ├── agents/
+│   │   ├── mathematician.py
+│   │   └── writer.py
+│   ├── config/
+│   │   ├── llm.py
+│   │   └── logger_config.py
+│   ├── memory/
+│   │   └── memory_manager.py
+│   ├── orchestrators/
+│   │   └── orchestrator.py
+│   ├── schemas/
+│   │   └── schemas.py
+│   ├── tools/
+│   │   └── tools.py
+│   └── utils/
+│       └── validation.py
+├── tests/
+├── docker-compose.yml
+├── dockerfile
+├── main.py
+├── pytest.ini
+├── requirements.txt
+└── .env.example
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤖 Agentes
 
-## Learn More
+### Senior Mathematician
+- Resolve cálculos complexos
+- Mantém contexto do histórico
+- Explica o raciocínio
 
-To learn more about Next.js, take a look at the following resources:
+### Copywriter Multilíngue Retro-Futurista
+- Produção de textos
+- Múltiplos idiomas
+- Estilo Synthwave/1984
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚙️ Instalação
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git clone <repo>
 
-## Deploy on Vercel
+cp .env.example .env
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+docker compose up --build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ou
+
+```bash
+pip install -r requirements.txt
+
+uvicorn main:app --reload
+```
+
+## 🧪 Testes
+
+```bash
+pytest
+pytest -v
+pytest --cov
+```
+
+Também foram realizados testes funcionais através do Swagger.
+
+## 📡 Documentação
+
+Após iniciar:
+
+```
+http://localhost:8000/docs
+```
+
+## 🎯 Diferenciais
+
+- Arquitetura refatorada
+- Separação por responsabilidades
+- Validação rigorosa
+- Docker Ready
+- Escalável
+- Fácil integração Front-end/Back-end
+- Logging centralizado
+- Memória conversacional
+- Múltiplas LLMs
+
+## 🔮 Próximos passos
+
+- Streaming
+- Redis
+- Banco vetorial
+- Observabilidade
+- CI/CD
+- Deploy Kubernetes
+
+## 📄 Licença
+
+MIT

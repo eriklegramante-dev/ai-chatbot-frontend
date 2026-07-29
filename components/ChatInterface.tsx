@@ -47,7 +47,7 @@ export default function ChatInterface() {
 
       let storedSession = localStorage.getItem("chat_session_id");
       if (!storedSession) {
-        const newId = generateUUID();
+        storedSession = generateUUID();
         localStorage.setItem("chat_session_id", storedSession);
       }
       setSessionId(storedSession);
@@ -139,6 +139,14 @@ export default function ChatInterface() {
     const userMessage = input.trim();
     setInput("");
     
+    // 1. Gera a string com o histórico ANTES da mensagem atual
+    const historyString = messages
+      .map((msg) => `${msg.sender === "user" ? "USER" : "ASSISTANT"}: ${msg.text}`)
+      .join("\n");
+
+    console.log("DEBUG FRONTEND HISTORY SENT:", historyString);
+
+    // 2. Atualiza a lista local de mensagens
     const updatedMessages: Message[] = [
       ...messages,
       { sender: "user", text: userMessage },
@@ -148,10 +156,6 @@ export default function ChatInterface() {
     updateHistory(updatedMessages, sessionId);
     setLoading(true);
 
-    const historyString = messages
-      .map((msg) => `${msg.sender.toUpperCase()}: ${msg.text}`)
-      .join("\n");
-
     try {
       const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
       const response = await fetch(`${API_URL}/api/chat`, {
@@ -160,7 +164,7 @@ export default function ChatInterface() {
         body: JSON.stringify({
           session_id: sessionId,
           message: userMessage,
-          chat_history: historyString,
+          chat_history: historyString, // Passa o histórico correto
         }),
       });
 
