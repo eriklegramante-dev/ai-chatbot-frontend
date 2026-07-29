@@ -152,7 +152,7 @@ http://localhost:8000/docs
 - Memória conversacional
 - Múltiplas LLMs
 
-## 🔮 Próximos passos
+## 🔮 Próximos passos:
 
 - Streaming
 - Redis
