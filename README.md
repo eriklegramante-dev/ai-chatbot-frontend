@@ -1,7 +1,6 @@
-
 # 🌆 SYNTH_MATH // 1984 — Client Terminal
 
-> Interface **React + Next.js** para um ecossistema de IA Multi-Agentes inspirado na estética **Synthwave / Retrowave / 1984**.
+> **React + Next.js** client interface for a Multi-Agent AI system, styled with a **Synthwave / Retrowave / 1984** aesthetic.
 
 ![React](https://img.shields.io/badge/React-20232A?logo=react)
 ![Next.js](https://img.shields.io/badge/Next.js-000?logo=nextdotjs)
@@ -10,136 +9,73 @@
 
 ---
 
-## 👁️ Visão Geral
+## 👁️ Overview
 
-O **SYNTH_MATH // 1984 Client Terminal** é a camada de apresentação do sistema de IA Multi-Agentes. A interface foi projetada para oferecer uma experiência imersiva inspirada em terminais CRT dos anos 80, combinando UX moderna com um visual hacker retro-futurista.
+The **SYNTH_MATH // 1984 Client Terminal** serves as the presentation layer for the Multi-Agent AI system. The interface delivers an immersive retro-futuristic CRT terminal experience, combining modern UI/UX patterns with 1980s cyberpunk styling.
 
 ---
 
 ## ✨ Features
 
-- 💬 Chat em tempo real
-- 🧠 Contexto persistido via `localStorage`
-- 📚 Histórico de sessões
-- ➕ Novo chat
-- 🗑️ Exclusão de conversas
-- ⚡ Loading "Processing Calculation..."
-- 🌈 Tema Synthwave (Pink/Cyan)
-- 📱 Layout responsivo
-- 🔌 Integração transparente com FastAPI
-- 🐳 Pronto para Docker
+- 💬 Real-time chat interface
+- 🧠 Context persistence via `localStorage`
+- 📚 Session management and dialogue history
+- ➕ New session initialization
+- 🗑️ Conversation deletion and cache clearance
+- ⚡ Animated "Processing Calculation..." status indicators
+- 🌈 Dual-tone Synthwave palette (Neon Pink / Cyan)
+- 📱 Fully responsive layout (desktop and mobile)
+- 🔌 Seamless REST integration with FastAPI
+- 🐳 Production-ready Docker containerization
 
-## 🧱 Stack
+---
 
-- React
-- Next.js (`use client`)
-- TypeScript
-- Tailwind CSS
-- Fetch API
-- localStorage
+## 🧱 Tech Stack
 
-## 🏗️ Arquitetura
+- **Framework:** Next.js (App Router, Client Components)
+- **Library:** React
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Networking:** Native Fetch API
+- **Client Storage:** Web Storage API (`localStorage`)
+
+---
+
+## 🏗️ Architecture
 
 ```text
-UI
- │
- ▼
+User Interface (UI)
+        │
+        ▼
 Session Manager
- │
- ▼
+        │
+        ▼
 History Formatter
- │
- ▼
-Fetch API
- │
- ▼
+        │
+        ▼
+Fetch API Client
+        │
+        ▼
 FastAPI Backend
- │
- ▼
-CrewAI + LLMs
+        │
+        ▼
+CrewAI Orchestrator + LLMs
 ```
 
-## 🚀 Instalação
+---
+
+## 🚀 Installation & Setup
+
+### Using npm
 
 ```bash
-git clone <repo>
-
-cd frontend
-
+git clone [https://github.com/your-username/synth-math-client.git](https://github.com/your-username/synth-math-client.git)
+cd synth-math-client
 npm install
-
 npm run dev
 ```
 
-ou
+### Using yarn
 
 ```bash
-yarn
-
-yarn dev
-```
-
-## 🔐 Variáveis de Ambiente
-
-`.env.local`
-
-```env
-NEXT_PUBLIC_API_URL=http://localhost:8000
-```
-
-## 🎨 Design System
-
-- Neon Pink + Cyan
-- Tipografia monoespaçada
-- Glassmorphism
-- Backdrop Blur
-- Scanlines CRT
-- Grid futurista
-- Glow Effects
-- Micro animações
-
-## 📂 Organização
-
-```text
-src/
- ├── components/
- ├── hooks/
- ├── types/
- ├── utils/
- ├── app/
- └── styles/
-```
-
-## 🔄 Fluxo
-
-1. Usuário envia prompt.
-2. Histórico é formatado (`USER`/`ASSISTANT`).
-3. Requisição assíncrona via Fetch.
-4. FastAPI processa.
-5. CrewAI consulta agentes.
-6. Resposta renderizada.
-7. Sessão salva no navegador.
-
-## 🧪 Testes
-
-- Testes manuais
-- Integração com Swagger
-- Validação de erros CORS
-- Testes de UX e responsividade
-
-## 🔮 Roadmap
-
-- Streaming de respostas
-- Markdown
-- Temas
-- Exportação de conversas
-- Autenticação
-- WebSockets
-
-## 🤝 Integração
-
-Projetado para integração desacoplada com o Back-end via Docker Compose, permitindo evolução independente dos repositórios mantendo comunicação consistente.
-
-## 📄 Licença
-
-MIT
+git clone [https://github.com/your-username/synth](https://github.com/your-username/synth)
