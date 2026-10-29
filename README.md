@@ -69,7 +69,7 @@ CrewAI Orchestrator + LLMs
 ### Using npm
 
 ```bash
-git clone [https://github.com/your-username/synth-math-client.git](https://github.com/your-username/synth-math-client.git)
+git clone [https://github.com/eriklegramante-dev/ai-chatbot-frontend.git](https://github.com/eriklegramante-dev/ai-chatbot-frontend.git)
 cd synth-math-client
 npm install
 npm run dev
@@ -78,4 +78,4 @@ npm run dev
 ### Using yarn
 
 ```bash
-git clone [https://github.com/your-username/synth](https://github.com/your-username/synth)
+git clone [https://github.com/eriklegramante-dev/synth](https://github.com/eriklegramante-dev/synth)
